@@ -1,10 +1,10 @@
-#ifndef SRC_CONFIGS_H_
-#define SRC_CONFIGS_H_
+//#ifndef SRC_CONFIGS_H_
+//#define SRC_CONFIGS_H_
 
-#include "ctre/Phoenix.h"
+//#include "ctre/Phoenix.h"
 
-struct configs {
-    /*Hold all of the config data*/
+//struct configs {
+    /*Hold all of the config data
 	ctre::phoenix::motorcontrol::can::TalonSRXConfiguration _talon;
 	ctre::phoenix::motorcontrol::can::VictorSPXConfiguration _victor;
 	ctre::phoenix::sensors::PigeonIMUConfiguration _pigeon;
@@ -15,7 +15,7 @@ struct configs {
 	configs() {
 		/*Construct all of the configurations with any set of values
 		 *These are just arbitrary values to demonstrate the feature
-         */
+         
 
         //TalonSRX:
         _talon.primaryPID.selectedFeedbackSensor = FeedbackDevice::RemoteSensor0;
@@ -310,6 +310,6 @@ struct configs {
         _fx.integratedSensorOffsetDegrees = 42;
         _fx.initializationStrategy = ctre::phoenix::sensors::SensorInitializationStrategy::BootToAbsolutePosition;
     }
-};
+}; */
     
-#endif /* SRC_CONFIGS_H_ */
+//#endif 

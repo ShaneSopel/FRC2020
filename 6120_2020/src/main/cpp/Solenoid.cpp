@@ -3,9 +3,9 @@
 
 namespace cyberstangs
 {
-	DouSolenoid hatchgrabber{0,1};
-	DouSolenoid lift{3,4};
-	Solenoid hatchshooter{2};
+	DouSolenoid hatchgrabber(0,1);
+	DouSolenoid lift(3,4);
+	Solenoid hatchshooter(2);
 
 	//For hatch grabber
 	//Solenoids are set in default off
