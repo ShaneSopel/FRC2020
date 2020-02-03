@@ -1,7 +1,6 @@
 #ifndef SOLENIODS_H_
 #define SOLENIODS_H_
 
-
 #include <frc/DoubleSolenoid.h>
 #include <frc/Solenoid.h>
 

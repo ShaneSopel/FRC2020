@@ -1,28 +1,28 @@
 
-#ifndef MOTORVIC6120_H_
-#define MOTORVIC6120_H_
+#ifndef MOTOR6120_H_
+#define MOTOR6120_H_
 
 #include "ctre/Phoenix.h"
 #include <frc/Spark.h>
 #include <frc/VictorSP.h>
-#include <frc/smartdashboard/SmartDashboard.h>
 #include <frc/speedControllerGroup.h>
 #include <frc/speedControllerGroup.inc>
 
-//using namespace ctre::phoenix::motorcontrol::can;
+using namespace ctre::phoenix::motorcontrol::can;
 
 namespace cyberstangs
 {
 
-  class Motor6120 
+  class MotorVictor6120
   {
-
-    public:
+   // public:
 
     void VicMotorInit();
+    void IntakeControl();
+    void ArmControl(); 
+  };
 
-    private: 
-
+}
     //setting the left side of the robot to a spark and creating a group with both motors
     //test
     //frc::Spark m_leftMotor1{0};
@@ -44,9 +44,6 @@ namespace cyberstangs
 
     //set up the elevator  lift system
    // TalonSRX * _talon = new TalonSRX(1);
-   
-  };
 
-}
 
 #endif
