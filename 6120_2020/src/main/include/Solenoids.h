@@ -4,35 +4,17 @@
 #include <frc/DoubleSolenoid.h>
 #include <frc/Solenoid.h>
 
-namespace cyberstangs
-{
-
-    class Solenoid : public frc::Solenoid
+    class Solenoid6120 
     {
     public: 
-        // Setting the PCM ports of the shooter and creating the shooter object
-        explicit Solenoid(int channel);
-        Solenoid(int moduleNumber, int channel);
-        ~Solenoid();
-        void Set(bool on) override;
-        bool Get() const override;
-        void hatchShooter();
+        void hatchShooter(double shoot);
+    }; 
 
-    };
-
-    class DouSolenoid : public frc::DoubleSolenoid
+    class DouSolenoid6120
     {
     public:
-
-        explicit DouSolenoid(int forwardChannel, int reverseChannel);
-        ~DouSolenoid();
-        void Set(Value value) override;
-        Value Get() const override;
-        void hatchGrabber();
-        void lifter();
-
+        void hatchGrabber(double extend, double retract);
+        void lifter(double shoot2);
     };
-
-} // end cyberstang
 
 #endif

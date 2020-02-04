@@ -1,13 +1,6 @@
-#include "ctre/Phoenix.h"
-#include "frc/WPILib.h"
-//#include "Configs20.h"
-//#include <frc/Spark.h>
-//#include <frc/VictorSP.h>
-#include "Motor6120.h"
-#include "Joystick.h"
 
-namespace cyberstangs
-{
+//#include "Motor6120.h"
+//#include "Joystick6120.h"
 
 	//std::string _sb;
     //int _loops = 0;
@@ -39,4 +32,3 @@ namespace cyberstangs
 	//		_talon->Set(ControlMode::PercentOutput, leftYstick);
 	//	}
 	
-}

@@ -1,31 +1,32 @@
   #include "Solenoids.h"
-  #include "Joystick.h"
+  #include <frc/DoubleSolenoid.h>
+  #include <frc/Solenoid.h>
+  #include "Joystick6120.h"
 
-namespace cyberstangs
-{
-	DouSolenoid hatchgrabber(0,1);
-	DouSolenoid lift(3,4);
-	Solenoid hatchshooter(2);
+	//Setup Solenoid
+	frc::DoubleSolenoid hatchgrabber(0,1);
+	frc::DoubleSolenoid lift(3,4);
+	frc::Solenoid hatchshooter(2);
 
 	//For hatch grabber
 	//Solenoids are set in default off
-
+	
 	//make functions ..... but we dont know what the robot will do yet.... 
-	void DouSolenoid::hatchGrabber()
+	void DouSolenoid6120::hatchGrabber(double extend, double retract)
 	{
 		//if the controller button in pressed then the solenoid will extend
-		if (extend1)
+		if (extend)
 		{
 			hatchgrabber.Set(frc::DoubleSolenoid::Value::kForward);
 		}
 		//If the button is pressed the solenoid will retract
-		if (retract1)
+		if (retract)
 		{
 			hatchgrabber.Set(frc::DoubleSolenoid::Value::kReverse);
 		}
 	}
 
-	void Solenoid::hatchShooter()
+	void Solenoid6120::hatchShooter(double shoot)
 	{
 		if (shoot)
 		{
@@ -38,7 +39,7 @@ namespace cyberstangs
 		}
 	}
 
-	void DouSolenoid::lifter()
+	void DouSolenoid6120::lifter(double shoot2)
 	{
 		//Robot Lift
 		if (shoot2)
@@ -50,4 +51,4 @@ namespace cyberstangs
 			lift.Set(frc::DoubleSolenoid::Value::kForward);
 		}
 	}
-}
+

@@ -1,3 +1,6 @@
+#ifndef CAMERA_H_
+#define CAMERA_H_
+
 #include <cameraserver/CameraServer.h>
 
 class Camera 
@@ -9,3 +12,5 @@ class Camera
 	cs::UsbCamera camera1 = frc::CameraServer::GetInstance()->StartAutomaticCapture();
 
 };
+
+#endif
