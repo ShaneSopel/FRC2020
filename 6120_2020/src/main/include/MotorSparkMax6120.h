@@ -21,6 +21,8 @@
     void SMAXXIntakeControl(); // previous year functions.
     void SMAXXArmControl();    // previous year functions.
                                // we will need to set up the functions we use this year and add encoder capability. 
+    void SMAXXEncoderReadRotations();
+    
     private:
     // PID coefficients
     double kP; 
