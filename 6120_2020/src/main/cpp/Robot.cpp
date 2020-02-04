@@ -6,36 +6,23 @@
 /*----------------------------------------------------------------------------*/
 
 #include "Robot.h"
-
+#include "MotorSparkMax6120.h"
+#include "MotorVictor6120.h"
+#include "Joystick6120.h"
 #include <iostream>
 
 #include <frc/smartdashboard/SmartDashboard.h>
+
 
 void Robot::RobotInit() {
   m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
 
-  //set Motor Input Constants
-	double leftDrive  = -_joystick1->GetRawAxis(1);
-	double rightDrive = _joystick1->GetRawAxis(5);
-	double armControl = _joystick2->GetRawAxis(5);
-	double intakeOut  = _joystick1->GetRawAxis(3);
-	double intakeIn   = -_joystick1->GetRawAxis(2);
-	bool toggle       = _joystick2->GetRawButton(5);
 
-	//Elevator inputs
-	/* get gamepad axis */
-	double leftYstick = _joystick2->GetY();
-	bool button1      = _joystick2->GetRawButton(1);
-  bool extend1      = joystick1.GetRawButton(3);
-	bool retract1     = joystick1.GetRawButton(2);
+  MotorSparkMax6120 setup;
 
-	//hatch Shooter
-	bool shoot        = joystick1.GetRawButton(5);
-
-	//if the controller button in pressed then the solenoid will extend
-	bool shoot2       = joystick1.GetRawButton(6);
+  setup.SMAXXMotorInit();
 
 }
 
@@ -83,7 +70,22 @@ void Robot::AutonomousPeriodic() {
 
 void Robot::TeleopInit() {}
 
-void Robot::TeleopPeriodic() {}
+void Robot::TeleopPeriodic() {
+
+
+  //joystick6120::leftDrive;
+	//joystick6120::rightDrive;
+	//joystick6120::armControl;
+	//joystick6120::intakeIn; 
+	//joystick6120::toggle;      
+
+  MotorSparkMax6120 setup;
+  setup.SMAXXEncoderReadRotations();
+
+  MotorVictor6120 moving;
+  moving.VicMotorInit(joystick6120::leftDrive, joystick6120::rightDrive);
+
+}
 
 void Robot::TestPeriodic() {}
 

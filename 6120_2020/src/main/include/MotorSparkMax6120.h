@@ -4,19 +4,20 @@
 
 #include "rev/CANSparkMax.h"
 
-  //setting up motor
-  rev::CANSparkMax motor1{0, rev::CANSparkMax::MotorType::kBrushed};
-
-  // setting up motors can
-  rev::CANEncoder encoder1 = motor1.GetEncoder(rev::CANEncoder::EncoderType::kQuadrature, 4096);
-
-  //Use Pid functionality
-  rev::CANPIDController pidController1 = motor1.GetPIDController();
-
   class MotorSparkMax6120
   {
     
     public:
+
+    //setting up motor
+    rev::CANSparkMax motor1{0, rev::CANSparkMax::MotorType::kBrushed};
+
+    // setting up motors can
+    rev::CANEncoder encoder1 = motor1.GetEncoder(rev::CANEncoder::EncoderType::kQuadrature, 4096);
+
+    //Use Pid functionality
+    rev::CANPIDController pidController1 = motor1.GetPIDController();
+
     void SMAXXMotorInit();     // this will setup parameters so we can get encoder data. we will need to read encoder data to set up conditions/parameters
     void SMAXXIntakeControl(); // previous year functions.
     void SMAXXArmControl();    // previous year functions.
