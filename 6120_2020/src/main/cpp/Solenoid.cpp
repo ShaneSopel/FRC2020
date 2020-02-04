@@ -1,7 +1,6 @@
   #include "Solenoids.h"
   #include <frc/DoubleSolenoid.h>
   #include <frc/Solenoid.h>
-  #include "Joystick6120.h"
 
 	//Setup Solenoid
 	frc::DoubleSolenoid hatchgrabber(0,1);
