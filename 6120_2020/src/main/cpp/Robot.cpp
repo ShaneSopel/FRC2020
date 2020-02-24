@@ -70,20 +70,20 @@ void Robot::AutonomousPeriodic() {
 
 void Robot::TeleopInit() {}
 
-void Robot::TeleopPeriodic() {
-
-
-  //joystick6120::leftDrive;
-	//joystick6120::rightDrive;
-	//joystick6120::armControl;
-	//joystick6120::intakeIn; 
-	//joystick6120::toggle;      
+void Robot::TeleopPeriodic() {     
 
   MotorSparkMax6120 setup;
   setup.SMAXXEncoderReadRotations();
 
   MotorVictor6120 moving;
   moving.VicMotorInit(joystick6120::leftDrive, joystick6120::rightDrive);
+
+  MotorVictor6120 intake;
+  intake.IntakeControl(joystick6120::intakeIn, joystick6120::intakeOut);
+
+  MotorVictor6120 armControl;
+  armControl.ArmControl(joystick6120::toggle, joystick6120::armControl);
+
 
 }
 

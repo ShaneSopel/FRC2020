@@ -216,7 +216,7 @@ class VictorSPX: public virtual ctre::phoenix::motorcontrol::can::BaseMotorContr
                  public virtual ctre::phoenix::motorcontrol::IMotorController {
 
 private:
-	/**
+	/** 
 	 * Gets all PID set persistant settings.
 	 *
 	 * @param pid               Object with all of the PID set persistant settings

@@ -19,6 +19,9 @@ namespace joystick6120
   double intakeIn   = -_joystick1->GetRawAxis(2);
   bool toggle       = _joystick2->GetRawButton(5);
 
+  double intakeOut1 = _joystick2->GetRawAxis(3);
+  double intakeIn2  = _joystick2->GetRawAxis(2);
+
   //Elevator inputs
   /* get gamepad axis */
   double leftYstick = _joystick2->GetY();
@@ -26,11 +29,13 @@ namespace joystick6120
   bool extend1      = joystick1.GetRawButton(3);
   bool retract1     = joystick1.GetRawButton(2);
 
+
+  // Solenoid based
   //hatch Shooter
-  bool shoot        = joystick1.GetRawButton(5);
+  //bool shoot        = joystick1.GetRawButton(5);
 
   //if the controller button in pressed then the solenoid will extend
-  bool shoot2       = joystick1.GetRawButton(6);
+  //bool shoot2       = joystick1.GetRawButton(6);
 
 }
 
