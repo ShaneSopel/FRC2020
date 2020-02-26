@@ -100,8 +100,13 @@ void Robot::TeleopPeriodic() {
   double intakeIn   = -_joystick1->GetRawAxis(2);
   bool toggle       = _joystick2->GetRawButton(5);
 
-  double intakeOut1 = _joystick2->GetRawAxis(3);
-  double intakeIn2  = _joystick2->GetRawAxis(2);
+  double intakeOut1 = _joystick1->GetRawAxis(3);
+  double intakeIn2  = _joystick1->GetRawAxis(2);
+
+  double feeder = _joystick2->GetRawAxis(2);
+
+  double shooter = joystick2.GetRawAxis(3);
+  double aimer = joystick2.GetRawAxis(1);
 
 
 
@@ -152,6 +157,20 @@ void Robot::TeleopPeriodic() {
 			else{ 
 				_armMotor->Set(ControlMode::PercentOutput,.4 * -armControl);
 			}
+    
+    //feeder control
+    feederMotor->Set(ControlMode::PercentOutput, feeder);
+
+    //Shooter Control
+    /*You will have to scale the shooter velocity, right now the raw
+    controller input is controlling velocity*/
+    
+    shooterPIDController.SetReference(shooter, rev::ControlType::kVelocity);
+    //aimerControl
+    aimerPIDController.SetReference(aimer, rev::ControlType::kPosition);
+    //change percentOutput to Position mode
+    _aimerMotorVictor->Set(ControlMode::PercentOutput,.4 * aimerEncoder);
+    
 
 }
 
