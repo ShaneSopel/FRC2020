@@ -1,4 +1,4 @@
-#ifndef JOYSTICK6120_H_
+/*#ifndef JOYSTICK6120_H_
 #define JOYSTICK6120_H_
 
 #include <frc/Joystick.h>
@@ -7,12 +7,13 @@ namespace joystick6120
 {
   //Joysticks
   frc::Joystick joystick1{0};
-  frc::Joystick joystick2{0};
+  frc::Joystick joystick2{1};
   frc::Joystick * _joystick1 = new frc::Joystick(0);
   frc::Joystick * _joystick2 = new frc::Joystick(1);
 
   //set Motor Input Constants
   double leftDrive  = -_joystick1->GetRawAxis(1);
+  //double leftDrive  = -_joystick1->GetRawAxis(1);
   double rightDrive = _joystick1->GetRawAxis(5);
   double armControl = _joystick2->GetRawAxis(5);
   double intakeOut  = _joystick1->GetRawAxis(3);
@@ -23,7 +24,7 @@ namespace joystick6120
   double intakeIn2  = _joystick2->GetRawAxis(2);
 
   //Elevator inputs
-  /* get gamepad axis */
+   get gamepad axis 
   double leftYstick = _joystick2->GetY();
   bool button1      = _joystick2->GetRawButton(1);
   bool extend1      = joystick1.GetRawButton(3);
@@ -40,3 +41,4 @@ namespace joystick6120
 }
 
 #endif
+*/

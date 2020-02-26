@@ -3,7 +3,7 @@
 #include "Robot.h"
 
 	//This function will set our SPARK motors initalization
-	void  MotorSparkMax6120::SMAXXMotorInit()
+/*	void  MotorSparkMax6120::SMAXXMotorInit()
 	{
 		
 		// We are settting our parameters from
@@ -17,10 +17,10 @@
 		this->kMaxOutput = 1;  
 
 		// Setting motor to default factory Settings
-		motor1.RestoreFactoryDefaults();
+		//motor1.RestoreFactoryDefaults();
 
 		// Setting feedback device aka setting what encoder to talk to.
-		pidController1.SetFeedbackDevice(encoder1);
+		//pidController1.SetFeedbackDevice(encoder1);
 
 		// Set the PID with the parameters above.
 		pidController1.SetP(kP);
@@ -80,14 +80,14 @@ void  MotorSparkMax6120::SMAXXEncoderReadRotations()
      *  rev::ControlType::kVelocity
      *  rev::ControlType::kVoltage
      */
-    pidController1.SetReference(rotations, rev::ControlType::kPosition);
-    frc::SmartDashboard::PutNumber("SetPoint", rotations);
-    frc::SmartDashboard::PutNumber("ProcessVariable", encoder1.GetPosition());
+    //pidController1.SetReference(rotations, rev::ControlType::kPosition);
+    //frc::SmartDashboard::PutNumber("SetPoint", rotations);
+    //frc::SmartDashboard::PutNumber("ProcessVariable", encoder1.GetPosition());
 
-	}
+	//}
 
-void  MotorSparkMax6120::SMAXXIntakeControl()
-	{
+//void  MotorSparkMax6120::SMAXXIntakeControl()
+//	{
 
 		//not using, if we needed with an encoder it would go here. 
 
@@ -103,12 +103,12 @@ void  MotorSparkMax6120::SMAXXIntakeControl()
 				_intakeMotor->Set(ControlMode::PercentOutput, intakeIn);
 			}
 		*/
-		int x;
+	//	int x;
 
-	}
+//	}
 
-void  MotorSparkMax6120::SMAXXArmControl()
-	{
+//void  MotorSparkMax6120::SMAXXArmControl()
+	//{
 		
 		//not using, if we needed an arm or something with an encoder it would go here. 
 		
@@ -121,6 +121,6 @@ void  MotorSparkMax6120::SMAXXArmControl()
 			else{ 
 				_armMotor->Set(ControlMode::PercentOutput,.4 * -armControl);
 			}*/
-		int x;
+//		int x;
 
-	}
+//	}

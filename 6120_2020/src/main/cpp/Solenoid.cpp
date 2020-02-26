@@ -3,15 +3,15 @@
   #include <frc/Solenoid.h>
 
 	//Setup Solenoid
-	frc::DoubleSolenoid hatchgrabber(0,1);
-	frc::DoubleSolenoid lift(3,4);
-	frc::Solenoid hatchshooter(2);
+	//frc::DoubleSolenoid hatchgrabber(0,1);
+	//frc::DoubleSolenoid lift(3,4);
+	//frc::Solenoid hatchshooter(2);
 
 	//For hatch grabber
 	//Solenoids are set in default off
 	
 	//make functions ..... but we dont know what the robot will do yet.... 
-	void DouSolenoid6120::hatchGrabber(double extend, double retract)
+/*	void DouSolenoid6120::hatchGrabber(double extend, double retract)
 	{
 		//if the controller button in pressed then the solenoid will extend
 		if (extend)
@@ -50,4 +50,4 @@
 			lift.Set(frc::DoubleSolenoid::Value::kForward);
 		}
 	}
-
+*/
